@@ -80,5 +80,5 @@ class Maze(object):
         fig.set_dpi(1)
         fig.set_figwidth(600)
         fig.set_figheight(600)
-        fig.close()
+        plt.close()
         return ax.imshow(maze_)
