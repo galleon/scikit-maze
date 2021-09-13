@@ -56,7 +56,7 @@ class Maze(object):
                 visited.add(next_cell)
                 stack.append(next_cell)
 
-    def is_an_empty_cell(i, j):
+    def is_an_empty_cell(self, i, j):
         return self.maze[i][j] == 0
     
     def get_image(self, x=1, y=1):
@@ -80,5 +80,6 @@ class Maze(object):
         fig.set_dpi(1)
         fig.set_figwidth(600)
         fig.set_figheight(600)
+        image = ax.imshow(maze_)
         plt.close()
-        return ax.imshow(maze_)
+        return image
