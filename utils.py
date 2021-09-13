@@ -55,6 +55,9 @@ class Maze(object):
                 self.maze[(i1 + i2) // 2][(j1 + j2) // 2] = Maze.empty_cell
                 visited.add(next_cell)
                 stack.append(next_cell)
+
+    def is_an_empty_cell(i, j):
+        return self.maze[i][j] == 0
     
     def get_image(self, x=1, y=1):
         """
@@ -77,4 +80,5 @@ class Maze(object):
         fig.set_dpi(1)
         fig.set_figwidth(600)
         fig.set_figheight(600)
+        fig.close()
         return ax.imshow(maze_)
