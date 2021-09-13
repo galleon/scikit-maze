@@ -56,7 +56,7 @@ class Maze(object):
                 visited.add(next_cell)
                 stack.append(next_cell)
     
-    def get_image(self, x, y):
+    def get_image(self, x=1, y=1):
         """
         Return an image from the Maze
         x, y: current position in the maze
