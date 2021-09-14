@@ -64,7 +64,7 @@ class Maze(object):
         Return an image from the Maze
         x, y: current position in the maze
         """
-        maze_ = np.array(self.maze).astype('uint8')
+        maze_ = 255*np.array(self.maze).astype('uint8')
         
         maze_[x, y] = 77
 
