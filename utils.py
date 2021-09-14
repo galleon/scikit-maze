@@ -1,7 +1,7 @@
 from collections import deque
 from random import choice
 from copy import deepcopy
-from PIL import Image
+import numpy as np
 
 class Maze(object):
     odd_row_pattern = [1, 1]
@@ -64,8 +64,8 @@ class Maze(object):
         Return an image from the Maze
         x, y: current position in the maze
         """
-        maze_ = deepcopy(self.maze)
+        maze_ = np.array(self.maze).astype('uint8')
         
-        maze_[x][y] = 0.3
+        maze_[x, y] = 77
 
-        return Image.fromarray(maze_)
+        return maze_
