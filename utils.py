@@ -1,7 +1,7 @@
 from collections import deque
 from random import choice
 from copy import deepcopy
-import matplotlib.pyplot as plt
+from PIL import Image
 
 class Maze(object):
     odd_row_pattern = [1, 1]
@@ -67,19 +67,5 @@ class Maze(object):
         maze_ = deepcopy(self.maze)
         
         maze_[x][y] = 0.3
-        plt.ioff()
-        fig, ax = plt.subplots(1)
-        ax.set_aspect('equal')  # set the x and y axes to the same scale
-        plt.xticks([])  # remove the tick marks by setting to an empty list
-        plt.yticks([])  # remove the tick marks by setting to an empty list
-        ax.invert_yaxis()  # invert the y-axis so the first row of data is at the top
-        plt.ion()
-        fig.canvas.header_visible = False
-        fig.canvas.footer_visible = False
-        fig.canvas.resizable = False
-        fig.set_dpi(1)
-        fig.set_figwidth(600)
-        fig.set_figheight(600)
-        image = ax.imshow(maze_)
-        plt.close()
-        return image
+
+        return Image.fromarray(maze_)
