@@ -66,6 +66,6 @@ class Maze(object):
         """
         maze_ = 255*np.array(self.maze).astype('uint8')
         
-        maze_[x, y] = 77
+        maze_[x, y] = 128
 
         return maze_
